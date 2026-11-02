@@ -1,0 +1,27 @@
+<canvas id="ambigramCanvas" width="300" height="150"></canvas>
+
+<script>
+  const canvas = document.getElementById("ambigramCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Clear canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Move origin to the center of the canvas
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+
+  ctx.font = "bold 48px serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
+  const word = "FLIP";
+
+  // Draw the original text
+  ctx.fillText(word, 0, 0);
+
+  // Rotate the canvas 180 degrees (Math.PI radians)
+  ctx.rotate(Math.PI);
+
+  // Draw the inverted text overlapping the center
+  ctx.fillText(word, 0, 0);
+</script>
